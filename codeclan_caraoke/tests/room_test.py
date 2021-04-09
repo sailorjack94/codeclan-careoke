@@ -38,3 +38,7 @@ class TestRoom(unittest.TestCase):
     def test_room_takings_increase(self):
         self.rockroom.add_guest_to_room(self.guest1)
         self.assertEqual(10, self.rockroom.roomtakings)
+    
+    def test_guest_cash_decreases(self):
+        self.rockroom.add_guest_to_room(self.guest2)
+        self.assertEqual(15, guest2.cash)
