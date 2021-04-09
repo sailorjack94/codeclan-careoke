@@ -13,8 +13,9 @@ class TestRoom(unittest.TestCase):
         self.guest3 = Guest("Bill Gates", 10000000000)
         self.guest4 = Guest("Bankrupt Mike", 5)
         self.guestlist = []
-        self.playlist = [self.song1, self.song2]
+        self.playlist = []
         self.rockroom = Room("Rock Room", 6, 10, self.playlist, self.guestlist, 0)
+        self.closedroom = Room("Pop Room", 0, 10, self.playlist, self.guestlist, 0)
 
     def test_room_has_roomname(self):
         self.assertEqual("Rock Room", self.rockroom.roomname)
@@ -57,3 +58,7 @@ class TestRoom(unittest.TestCase):
     def test_guest_cannot_afford(self):
         self.rockroom.add_guest_to_room(self.guest4)
         self.assertEqual(0, len(self.rockroom.guestlist))
+
+    def test_room_full(self):
+        self.closedroom.add_guest_to_room(self.guest1)
+        self.assertEqual(0, len(self.closedroom.guestlist))
