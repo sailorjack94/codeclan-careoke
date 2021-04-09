@@ -35,6 +35,11 @@ class TestRoom(unittest.TestCase):
         self.rockroom.add_song_to_room(self.song1)
         self.assertEqual([self.song1] , self.rockroom.playlist)
 
+    def test_add_multiple_songs_to_room(self):
+        self.rockroom.add_song_to_room(self.song1)
+        self.rockroom.add_song_to_room(self.song2)
+        self.assertEqual([self.song1, self.song2] , self.rockroom.playlist)
+
     def test_room_has_guestlist(self):
         self.assertEqual([], self.rockroom.guestlist)
 
