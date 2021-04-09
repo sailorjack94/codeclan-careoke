@@ -68,3 +68,6 @@ class TestRoom(unittest.TestCase):
         self.rockroom.add_guest_to_room(self.guest2)
         self.rockroom.remove_guest_from_room(self.guest2)
         self.assertEqual([self.guest1], self.rockroom.guestlist)
+
+    def test_remove_guest_but_guest_not_present(self):
+        self.assertEqual("They aren't in this room.", self.rockroom.remove_guest_from_room(self.guest1))
