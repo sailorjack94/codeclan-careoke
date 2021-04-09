@@ -1,2 +1,2 @@
-class Guest(self):
+class Guest:
     pass
