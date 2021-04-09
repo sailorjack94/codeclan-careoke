@@ -18,3 +18,6 @@ class TestRoom(unittest.TestCase):
 
     def test_room_has_entry_price(self):
         self.assertEqual(10, self.rockroom.costpp)
+
+    def test_room_has_playlist(self):
+        self.assertEqual(self.playlist, self.rockroom.playlist)
