@@ -15,4 +15,9 @@ class Room:
             self.guestlist.append(guest)
             guest.cash -= self.costpp
             self.roomtakings += self.costpp
-            
+
+    def remove_guest_from_room(self, guest):
+        if guest in self.guestlist:
+            self.guestlist.remove(guest)
+        else:
+            return "They aren't in this room."

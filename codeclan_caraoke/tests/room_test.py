@@ -62,3 +62,9 @@ class TestRoom(unittest.TestCase):
     def test_room_full(self):
         self.closedroom.add_guest_to_room(self.guest1)
         self.assertEqual(0, len(self.closedroom.guestlist))
+
+    def test_remove_guest_from_room(self):
+        self.rockroom.add_guest_to_room(self.guest1)
+        self.rockroom.add_guest_to_room(self.guest2)
+        self.rockroom.remove_guest_from_room(self.guest2)
+        self.assertEqual([self.guest1], self.rockroom.guestlist)
