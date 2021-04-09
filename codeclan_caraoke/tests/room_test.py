@@ -8,7 +8,10 @@ class TestRoom(unittest.TestCase):
         self.song1 = Song("Ace of Spades", "Motorhead")
         self.song2 = Song("Number of the Beast", "Iron Maiden")
         self.playlist = [self.song1, self.song2]
-        self.roomrock = Room("Rock Room", 6, 10, self.playlist)
+        self.rockroom = Room("Rock Room", 6, 10, self.playlist)
 
     def test_room_has_roomname(self):
-        self.assertEqual("Rock Room", self.roomrock.roomname)
+        self.assertEqual("Rock Room", self.rockroom.roomname)
+
+    def test_room_has_capacity(self):
+        self.assertEqual(6, self.rockroom.capacity)
