@@ -41,4 +41,4 @@ class TestRoom(unittest.TestCase):
     
     def test_guest_cash_decreases(self):
         self.rockroom.add_guest_to_room(self.guest2)
-        self.assertEqual(15, guest2.cash)
+        self.assertEqual(15, self.guest2.cash)
