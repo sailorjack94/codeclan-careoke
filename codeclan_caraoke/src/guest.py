@@ -1,0 +1,2 @@
+class Guest(self):
+    pass
