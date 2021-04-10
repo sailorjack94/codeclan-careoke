@@ -9,3 +9,10 @@ class Bar:
             self.menu[food_drink] += 1
         else:
             self.menu[food_drink] = 1
+
+    def check_stock_level(self, food_drink):
+        stock_level = 0
+        if food_drink in self.menu:
+            return self.menu[food_drink]
+        else:
+            return stock_level
