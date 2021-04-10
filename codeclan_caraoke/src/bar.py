@@ -1,3 +1,6 @@
+from src.guest import *
+from src.food_drink import *
+
 class Bar:
     def __init__(self, till):
         self.name = "CodeClanCaraoke"
@@ -16,3 +19,9 @@ class Bar:
             return self.menu[food_drink]
         else:
             return stock_level
+
+    def sell_food_drink(self, food_drink, guest):
+        if (self.check_stock_level(food_drink) > 0) and (guest.cash >= food_drink.price):
+            self.till += food_drink.price
+            guest.buy_item(food_drink)
+            self.menu[food_drink] -= 1

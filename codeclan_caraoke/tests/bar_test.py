@@ -29,3 +29,4 @@ class TestBar(unittest.TestCase):
         self.bar.add_food_or_drink(self.chips)
         self.bar.add_food_or_drink(self.chips)
         self.assertEqual(2, self.bar.check_stock_level(self.chips))
+
