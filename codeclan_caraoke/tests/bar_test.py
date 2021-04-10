@@ -11,3 +11,5 @@ class TestBar(unittest.TestCase):
 
     def test_bar_has_till(self):
         self.assertEqual(1000, self.bar.till)
+
+    
