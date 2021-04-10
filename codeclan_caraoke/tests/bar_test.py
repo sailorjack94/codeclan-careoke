@@ -19,5 +19,10 @@ class TestBar(unittest.TestCase):
     def test_add_food_or_drink(self):
         self.bar.add_food_or_drink(self.chips)
         self.assertEqual({self.chips : 1}, self.bar.menu)
+        
+    def test_can_increase_stock_level(self):
+        self.bar.add_food_or_drink(self.chips)
+        self.bar.add_food_or_drink(self.chips)
+        self.assertEqual({self.chips : 2}, self.bar.menu)
 
     
