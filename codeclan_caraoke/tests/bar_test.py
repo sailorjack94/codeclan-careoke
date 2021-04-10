@@ -9,6 +9,7 @@ class TestBar(unittest.TestCase):
         self.chips = FoodDrink("Chips", 2.50)
         self.beer = FoodDrink("Beer", 3.50)
         self.wine = FoodDrink("Wine", 4.50)
+        self.guest = Guest("Niall", 20, "Aces High")
 
     def test_bar_has_name(self):
         self.assertEqual("CodeClanCaraoke", self.bar.name)
@@ -30,3 +31,8 @@ class TestBar(unittest.TestCase):
         self.bar.add_food_or_drink(self.chips)
         self.assertEqual(2, self.bar.check_stock_level(self.chips))
 
+    def test_sell_food_drink(self):
+        self.bar.add_food_or_drink(self.chips)
+        self.bar.add_food_or_drink(self.chips)
+        self.bar.sell_food_drink(self.chips, self.guest)
+        self.assertEqual(17.50, self.guest.cash)
