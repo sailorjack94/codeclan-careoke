@@ -8,10 +8,10 @@ class TestRoom(unittest.TestCase):
     def setUp(self):
         self.song1 = Song("Ace of Spades", "Motorhead")
         self.song2 = Song("Number of the Beast", "Iron Maiden")
-        self.guest1 = Guest("Dave", 20)
-        self.guest2 = Guest("Catherine", 25)
-        self.guest3 = Guest("Bill Gates", 10000000000)
-        self.guest4 = Guest("Bankrupt Mike", 5)
+        self.guest1 = Guest("Dave", 20, self.song1)
+        self.guest2 = Guest("Catherine", 25, self.song1)
+        self.guest3 = Guest("Bill Gates", 10000000000, self.song2)
+        self.guest4 = Guest("Bankrupt Mike", 5, self.song2)
         self.guestlist = []
         self.playlist = []
         self.rockroom = Room("Rock Room", 6, 10, self.playlist, self.guestlist, 0)
