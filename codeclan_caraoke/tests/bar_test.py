@@ -36,3 +36,4 @@ class TestBar(unittest.TestCase):
         self.bar.add_food_or_drink(self.chips)
         self.bar.sell_food_drink(self.chips, self.guest)
         self.assertEqual(17.50, self.guest.cash)
+        self.assertEqual(1002.50, self.bar.till)
