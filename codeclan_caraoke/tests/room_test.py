@@ -80,3 +80,13 @@ class TestRoom(unittest.TestCase):
 
     def test_remove_guest_but_guest_not_present(self):
         self.assertEqual("They aren't in this room.", self.rockroom.remove_guest_from_room(self.guest1))
+
+    def test_guest_fav_in_playlist(self):
+        self.rockroom.add_guest_to_room(self.guest1)
+        self.rockroom.add_song_to_room(self.song1)
+        self.assertEqual("Whooo!", self.rockroom.guest_fav_in_playlist(self.guest1))
+
+    def test_guest_fav_not_in_playlist(self):
+        self.rockroom.add_guest_to_room(self.guest1)
+        self.rockroom.add_song_to_room(self.song2)
+        self.assertEqual(None , self.rockroom.guest_fav_in_playlist(self.guest2))

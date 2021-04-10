@@ -24,3 +24,9 @@ class Room:
 
     def add_song_to_room(self, song):
         self.playlist.append(song)
+    
+    def guest_fav_in_playlist(self, guest):
+        if guest.fav_song in self.playlist:
+            return "Whooo!"
+        else:
+            pass
